@@ -19,17 +19,29 @@ $(document).ready(function(){
 );
 
   
+    $(".fields").keyup(preview);
+    $("#f_file").change(preview);
+    $("#f_content").keyup(preview);
+    $("#form_reset").click(reset);
 
-    function img() {
-       var img;
-        const preview = document.querySelector('img');
+
+    function preview() {
+      
+            
+            
+        add_nodes();
+        ///Getting info from form 
+        var title = $("#ff_title").val();
+        var author = $("#f_author").val();
+        var content = $("#f_content").val();
+        ////////Getting file
         const file = document.querySelector('input[type=file]').files[0];
-        var img= document.getElementById("test");
         const reader = new FileReader();
       
         reader.addEventListener("load", function () {
           // convert image file to base64 string
-         img.src= reader.result;
+       var img = reader.result;
+        $("#img").attr("src", img);
        
       
         }, false);
@@ -37,9 +49,82 @@ $(document).ready(function(){
         if (file) {
           reader.readAsDataURL(file);
         }
-            
+
+        var body = $("#body");
+        
+     
+        /////Add new text nodes to Dom
+        $("#title").html(title);
+        $("#author").html(author);
+        $("#date").html('Today at 5:00pm');
+        $("#p_content").html(content);
        
-     }
+
+      
+
+            
+    }
+
+
+    function add_nodes(){
+
+            $("#preview").html(`
+
+         <div>
+             <h2 id="title" class='p_title'></h2>
+            <p id="by">By <strong id="author" class="p_author"></strong>  |  <span id="date">   </span>   </p>
+             </div>
+            <div><img id="img" class="p_img" src="" alt=""></div>
+            <div>
+            <p id="p_content" class="p_body">  
+            </p>
+
+        </div>  `);
+
+
+         }
+
+
+
+
+
+
+
+
+         function reset(){
+
+           
+                $("#title").html("");
+                $("#author").html("");
+                $("#date").html("");
+                $("#p_content").html("");
+           
+                $("#by").html("");
+
+                $("#img").attr("src", "");
+                $("#myform").reset();
+            
+             
+         }
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+
+
+
+    
+       
+     
 
     
 
@@ -65,7 +150,6 @@ $(document).ready(function(){
 
      
 
-});
 
 
    

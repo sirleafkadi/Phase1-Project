@@ -113,3 +113,37 @@ nav{
 .p_author{
     color: rgb(92,158,228);
 }
+
+.p_img{
+
+        max-width: 100%;
+}
+
+.p_title{
+    font-weight:bold;
+    word-wrap: break-word;
+}
+
+.p_body{
+    margin-top:5%;
+    
+    text-align:left;
+    word-wrap: break-word;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    line-height: 2em;
+  
+}
+
+
+.p_body2{
+  
+    margin-bottom:10%;
+    text-align:left;
+    word-wrap: break-word;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    line-height: 2em;
+  
+}
+
