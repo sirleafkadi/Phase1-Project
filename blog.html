@@ -11,6 +11,8 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="css/mystyle.css"> 
+<link rel="stylesheet" href="aos.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <script src="https://kit.fontawesome.com/c8c143fd1a.js" crossorigin="anonymous"></script>
 
@@ -47,7 +49,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT</a>
+                    <a class="nav-link" href="contact.html">CONTACT</a>
                   </li>
               </ul>
              <form  class="form-inline my-2 my-lg-0">
@@ -63,118 +65,165 @@
 
    
         </div>
-      
-
-            <div class="container">
-
-
-                  <!-- Welcome title -->
-          <div style=" width: 80%; margin: 0 auto; padding: 0 50px 50px 50px; " class="add_post">
-
-            <!-- <button type="button" style=" margin-top:3%"> Tech<br> </button> -->
-                
-          
-
-               <form action="" id="myform"style="margin-top: 10%; padding:2.9%">
-
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" id="f_name"  >Full Name:</label>
-                      <div class="col-sm-10">
-                        <input type="text" class=" fields form-control" id="f_author" placeholder="Enter Name">
-                      </div>
-                    </div>
-
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" id="f_title" >Title</label>
-                      <div class="col-sm-10">
-                        <input type="text" class=" fields form-control" id="ff_title" placeholder="Enter Title">
-                      </div>
-                    </div>
-                    
-
-
-                    <div class="form-group">
-                      <label class="control-label col-sm-2" id="file" >Insert Image</label>
-                      <div class="col-sm-10">
-                        <input type="file"  id="f_file" >
-                      </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="content">Enter Content</label>
-                        <textarea  class="  form-control rounded-0" id="f_content" rows="10"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10" style="display:flex;  justify-content: space-between;">
-                        <input id="sub" type="submit" class="btn btn-default">
-                        <input id="form_reset" type="reset" class="btn btn-default"  value="Reset">
-                        
-                      </div>
-                    </div>
-                
-                  </form>
-
+                 
         
 
+        <div id="form_parent" style=" margin-top:0; padding:50px" class="container-fluid">
+          <h3 style=" text-align: center; background-color:white "></h3>
             
-          </div> 
+            <div style=" display:flex; justify-content: center;  " class="row">
+                <!-- Welcome title -->
+                <div  style=" margin-right:2%; height: .5%;  width: 30%;  padding: 0 50px 100px 50px; "  id ="formm" class=" col-lg-3 col-12 add_post">
 
-                  <hr>
+                  <!-- <button type="button" style=" margin-top:3%"> Tech<br> </button> -->
+                      
+                      <form action="" id="myform" style="  margin-top: 10%; padding:2.9%; ">
+      
+                          <div class="form-group">
+                            <label class="control-label col-sm-12" id="f_name"  >Full Name:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class=" fields form-control" id="f_author" placeholder="Enter Name">
+                              <div class="error" id="f_author_Err"></div>
+                            </div>
+                          </div>
+      
+                          <div class="form-group">
+                            <label class="control-label col-sm-2" id="f_title" >Title</label>
+                            <div class="col-sm-10">
+                              <input type="text" class=" fields form-control" id="ff_title" placeholder="Enter Title">
+                              <div class="error" id="ff_title_Err"></div>
+                            </div>
+                          </div>
+                          
+      
+      
+                          <div class="form-group">
+                            <label class="control-label col-sm-12" id="file" >Insert Image</label>
+                            <div class="col-sm-10">
+                              <input class="fields" type="file"  id="f_file" >
+                              <div class="error" id="f_file_Err"></div>
+                            </div>
+                          </div>
+      
+      
+                          <div class="form-group">
+                              <label for="content">Enter Content</label>
+                              <textarea  class=" fields form-control rounded-0" id="f_content" rows="10"></textarea>
+                              <div class="error" id="f_content_Err"></div>
+                          </div>
+      
+                          <div class="form-group">
+                            <div  class="col-sm-offset-2 col-sm-10" style="  display:flex;  justify-content: space-between;">
+                              <input style="color:white;" id="sub" type="submit" class="btn btn-default">
+                              <input style="color:white;" id="form_reset" type="reset" class="btn btn-default"  value="Reset">
+                              
+                            </div>
+                          </div>
+                      
+                        </form>
+      
+                     </div> 
 
 
+                     <div style=" background-color: white; " class="col-lg-6 col-12">
 
-
-
-
-
-  <div style="display:flex; justify-content: space-between; " class="row section">
-
-
-
-           <!-- Sample  -->
-           <section style="display:flex; flex-direction: column; margin-bottom:10%" class="col-lg-9" id="preview">
+                      <!-- Sample  -->
+                       <section  style=" margin: 0 auto; display:flex; flex-direction: column; margin-bottom:10%" class="col-lg-9" id="preview">
       
      
 
-            <!-- All Posts -->
+                      <!-- All Posts -->
 
 
-            </section>
+                         </section>
 
 
-<hr>
-<hr>
+                      <!-- END-->
+                     </div>
 
-
-
-
-
-
-
-               
+              </div>
+        </div>
 
 
 
+        <div class="container"  >
+          <h1 style=" padding-top:10px;  font-weight: bold; text-align:center;">Tech World</h1>
+        <div  class="row">
+          
+          <article data-aos="fade-up" style="  margin-top: 10%;  padding-left: 20px;   max-height: 220px" class="col-lg-4 "  >
+                  
+                 
+        
+            <img style="max-height: 99%" src="https://images.unsplash.com/photo-1592422301045-4ceb1b64d63e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="">
+
+        
+
+        </article>
+
+
+
+            <article data-aos="fade-up" style=" border:1px solid red;  margin-top: 10%;  padding-left: 20px;   max-height: 300px" class="col-lg-4 "  id="sidebar">
+                  
+
+          
+                <p id="post_now" style="padding-top:5%" > <a  href="" class=" sidebar_2 "><i class="fas fa-plus"></i> Post Now</a> </p>
+
+                <div class=" sidebar_2 " style="display:flex; flex-direction: column;">
+                    <a  href="" class=" sidebar_2 "><i  class="fab fa-facebook-square"></i>  Facebook </a>
+                    <a href="" class=" sidebar_2 "><i class="fab fa-youtube"></i> Youtube</a>
+                    <a href="" class=" sidebar_2 "><i class="fab fa-twitter"></i> Twighter</a> 
+                </div>
+
+            
+
+            </article>
+
+            
+       
+            <article data-aos="fade-up" style="  margin-top: 10%;  padding-left: 20px;   max-height: 220px" class="col-lg-4 "  >
+                  
+                 
+        
+              <img style="max-height: 99%" src="https://images.unsplash.com/photo-1563209259-b2fa97148ce1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1257&q=80" alt="">
+  
+          
+              
+          </article>
+
+          <h6  style="margin:0 auto; margin-top: 3%; text-align: center">The world is changing, so is technology</h6>
+
+        </div>
+
+
+        </div>
+
+
+
+
+
+     <section id="section_two" class="container-fluid">
+
+            <div style="   padding: 1% 0; " class="container">
+
+
+            <div   style="  display:flex; justify-content: space-between; " class="row section">
+
+
+
+           
 
 
 
 
 
 
-
-
-
-
-
-            <!-- Content  -->
-            <section style="display:flex; flex-direction: column;" class="col-lg-9" id="contents">
+<!-- Content  -->
+            <section data-aos="fade-up" style=" border-radius: px; padding: 50px; margin-top: -5%; display:flex; flex-direction: column;" class="col-lg-12" id="contents">
 
                <!-- All Posts -->
 
               <div>
-                <h2 class='p_title'>Google Has contributed to Global Warming With Their New technology Known As "Save It"</h2>
+                <h2 class='p_title'>Facebook Has contributed to Global Warming With Their New technology Known As "Save It"</h2>
                 <p>By <strong class="p_author">Prince Johnson</strong>  | Today at 5:00pm</p>
               </div>
 
@@ -196,7 +245,7 @@
                     discovered the undoubtable source.
                  </p>
 
-
+                 <button type="button" class="btn btn-dark">Continue reading</button>
                  <p class="p_body2">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
                   "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. 
                   This book is a treatise on the theory of ethics, very popular during the Renaissance.
@@ -213,35 +262,75 @@
              </section>
 
 
-           <div class="col-lg-1"></div>
+          
 
-            <article  class="col-lg-2 "  id="sidebar">
-                    <strong style="text-align:center; padding-top: 5%;">Biography</strong>
-                <p class="intro_text2 intro_text">
-                    A little about me, My name is <strong >Sirleaf Wiah</strong> I'm from West Africa but base in the U.S. 
-                    <br>
-                    I've been a Tech lover since childhood,
-                    and delighted to share  Tech news with the world
+
+
+
+
+             
+             <!-- Content  -->
+            <section data-aos="fade-up" style=" border-radius: px; padding: 50px; margin-top: -5%; display:flex; flex-direction: column;" class="col-lg-12" id="contents">
+
+              <!-- All Posts -->
+
+             <div>
+               <h2 class='p_title'>Sansumg and Apple has launched their new IGalaxy AS50 </h2>
+               <p>By <strong class="p_author">Prince Johnson</strong>  | Today at 5:00pm</p>
+             </div>
+
+
+             <div>
+
+               <img class="p_img" src="https://images.unsplash.com/photo-1586319759999-96811dcfbd0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+             
+             </div>
+
+             <div >
+
+               <p class="p_body">   
+                 
+                 Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                 Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                  and going through the cites of the word in classical literature,
+                   discovered the undoubtable source.
                 </p>
 
-          
-                <p > <a href="" class=" sidebar_2 "><i class="fas fa-plus"></i> AddPost</a> </p>
+                <button type="button" class="btn btn-dark">Continue reading</button>
+                <p class="p_body2">Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
+                 "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. 
+                 This book is a treatise on the theory of ethics, very popular during the Renaissance.
+                  The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                  </p> 
 
-                <div class=" sidebar_2 " style="display:flex; flex-direction: column;">
-                    <a  href="" class=" sidebar_2 "><i  class="fab fa-facebook-square"></i>  Facebook </a>
-                    <a href="" class=" sidebar_2 "><i class="fab fa-youtube"></i> Youtube</a>
-                    <a href="" class=" sidebar_2 "><i class="fab fa-twitter"></i> Twighter</a> 
-                </div>
+             </div>
 
-            
 
-            </article>
+
+
+
+           
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
 
         </div> 
 
 
+      </section>
 
 
 
@@ -249,8 +338,6 @@
 
 
 
-
-    </div>
 
 
          
@@ -268,7 +355,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="js/myscript.js"></script> 
+
+
+<script>
+  AOS.init();
+</script>
 
 </body>
 </html>
