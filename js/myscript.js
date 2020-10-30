@@ -1,8 +1,5 @@
 $(document).ready(function(){
     
-    var img;
-    var list=[];
-    var get_id=0;
     $(".fields").keyup(preview);
     $("#f_file").change(preview);
     $("#f_content").keyup(preview);
@@ -10,54 +7,48 @@ $(document).ready(function(){
     var once=false;
     var element_id;
     var err_id;
-    var passed=false;
     var count=0;
+   
     $("#post_now").click(function(){
-        $("form").slideToggle();
+        $(".form_parent").toggle();
+
     });
 
 
      $("#myform").submit( function(event){
+         
         once=true;
         //////If submited check for validation
             $(".fields").each(function(){
                     if( $(this).val()=="" || $(this).val()==null || $(this).val() =="undefined" ){
                      element_id = $(this).attr("id");
-                   var get=  err(element_id);
-                   
-                     event.preventDefault();    
+                     var get= err(element_id);
+                      count=0;
+                    
+                    event.preventDefault(); 
+                
                     }
                    
-
-                    
-            });
-
-       
-       
-            // if(passed){
-            //     if(confirm("Do you want to submit this post?")) submit(); else {  alert('Post concelled!'); event.preventDefault();}
-            // }
-    
+                     else {count++;}         
 
 
-        
-          
+             });
 
-
-
-
-
-    //////Enclosure function
+             if(count>=4 ) if(confirm("Do you want to submit this post?")) submit(); else {  alert('Post concelled!'); event.preventDefault();}
+              
+           //////Enclosure function
         function submit(){
 
             var get_preview = $("#preview").html();
-             $("#contents").append(get_preview);
+             $("#contents").prepend(get_preview+'<br><br><br><br>');
 
            
             alert('Successfully submit');
+          
             event.preventDefault();
+        
             reset();
-
+         
         }
 
 
@@ -72,40 +63,19 @@ $(document).ready(function(){
                 // var cur = $(this);
               
             if( err_id.search(element_id)>=0 ) 
-             { if( $(this).text()==""|| $(this).text()=="undefined" || $(this).text()==null) {$(this).text("Error"); return;}
-               else  { $(this).text(""); return; }
+             { if( $(this).text()==""|| $(this).text()=="undefined" || $(this).text()==null) {$(this).text("Empty ");    return;}
+               else  { $(this).text(""); count++;  return;  }
              }
 
-         
-         
-        });
+      });
         
-
-
-
-    }
+     }
  
      $(".fields").change(function(){
-        if(once){  err( $(this).attr("id")  ); }
+        if(once){ err( $(this).attr("id")  ); }
      });
  
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        function preview() {
+    function preview() {
       
          add_nodes();
         ///Getting info from form 
@@ -136,12 +106,7 @@ $(document).ready(function(){
         $("#author").html(author);
         $("#date").html('Today at 5:00pm');
         $("#p_content").html(content);
-       
-
-      
-
-            
-    }
+       }
 
 
     function add_nodes(){
@@ -182,6 +147,11 @@ $(document).ready(function(){
 
 
 
+         /////Add post
+
+
+     
+
 
 
 
@@ -201,52 +171,4 @@ $(document).ready(function(){
 
  
 
-    // function posts(){
-
-    //     var get_author = $("#authoe").val();
-    //     var get_title = document.getElementById('title').value;
-    //     var get_content = document.getElementById('content').value;
-     
-
-    //     var list = document.getElementById("list");
-
-    //     list.innerHTML+=`<p> ${list}  </p> `;
-        
   
-    //       list.push({author: get_author, title: get_title,  content: get_content, id: get_id });
-        
-         
-     
-    //  }
-
-     
-
-
-
-   
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-/* <div class="post" >
-
-<div > <img class="post_img img-responsive"  src="img/facebook.png" alt=""></div>
-
-<div class="post_text" >
-    <a class="title" style="text-decoration: none;" href="">Mark Zuckerberg and Jack Dorsey to testify before the Senate Judiciary Committee</a>
-    <p>By <span class="author">Jay Peters</span> | Today at <span>5:50pm CDT</span>   </p>
-</div>
-
-</div> */

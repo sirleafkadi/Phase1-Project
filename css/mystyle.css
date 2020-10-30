@@ -174,13 +174,19 @@ nav{
 
 .error{
 
-    color:red;
+    color:rgb(202, 50, 50);
 }
 
 /* 
 ///////Mobile */
 
 @media screen and (max-width: 992px) {
+
+        body{
+            overflow-x: hidden;
+        }
+
+      
     .post{
         display:flex; flex-direction: column; 
         
