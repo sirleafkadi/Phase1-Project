@@ -54,6 +54,16 @@ $(document).ready(function(){
 
     });
 
+
+    
+
+
+
+
+
+
+
+
 ////////////Selecting Error div to show error
     function err(element_id){
      
@@ -145,11 +155,6 @@ $(document).ready(function(){
 
 
 
-
-
-         /////Add post
-
-
      
 
 
@@ -159,14 +164,30 @@ $(document).ready(function(){
 
     });
 
+    function email_check(){
+
+      var email_ch = document.getElementsByClassName('email')[0];
+
+      email_ch.addEventListener('change', function(){
+          
+        let reg = /\S+@\S+\.\S+/;
+
+        if(reg.test(this.value)==true){ 
+
+             $("#sub").attr('disabled', false); 
+             $(".email_err").html("");
+          
+        }     else { 
+          
+                   $(".email_err").html("Invalid email") ;
+                    $("#sub").attr('disabled', true);
+            }
 
 
+      });
 
 
-    
-       
-     
-
+ }
     
 
  

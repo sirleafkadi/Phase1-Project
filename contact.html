@@ -17,7 +17,7 @@
 <script src="https://kit.fontawesome.com/c8c143fd1a.js" crossorigin="anonymous"></script>
 
 </head>
-<body  >
+<body onload="email_check()" >
     
      <div class="container-fluid" style="background-color: rgb(92,158,228);">
 
@@ -116,8 +116,8 @@
                           <div class="form-group">
                             <label class="control-label col-sm-12" id="f_title" >Email (require)</label>
                             <div class="col-sm-10">
-                              <input type="Email" class=" fields form-control" id="ff_title" placeholder="Enter Title">
-                              <div class="error" id="ff_title_Err"></div>
+                              <input type="text" class=" email fields form-control" id="ff_title" placeholder="Enter Title">
+                              <div class="error email_err" id="ff_title_Err"></div>
                             </div>
                           </div>
                           
